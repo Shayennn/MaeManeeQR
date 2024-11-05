@@ -26,3 +26,15 @@ print(mmn)  # The QRCode content.
 ## License
 
 [The MIT License.](LICENSE)
+
+
+
+
+ModuleNotFoundError: No module named 'PyCRC'
+```
+pip uninstall PyCRC
+pip install pythoncrc
+
+https://stackoverflow.com/questions/65751909/no-module-named-pycrc
+```
+
