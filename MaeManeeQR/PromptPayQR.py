@@ -3,18 +3,17 @@ from PyCRC.CRCCCITT import CRCCCITT
 
 
 class PromptPayQR:
-    fields = {
-    }
+    fields = {}
 
     def __init__(self):
-        self.crc_obj = CRCCCITT('FFFF')
-        self.addField('version', '01', '00')
-        self.addField('onetime', '12', '01')
-        self.addField('currency', '764', '53')
-        self.addField('country', 'TH', '58')
+        self.crc_obj = CRCCCITT("FFFF")
+        self.addField("version", "01", "00")
+        self.addField("onetime", "12", "01")
+        self.addField("currency", "764", "53")
+        self.addField("country", "TH", "58")
 
     def setAmount(self, amount):
-        self.addField('amount', '%.2f' % round(amount, 2), '54')
+        self.addField("amount", "%.2f" % round(amount, 2), "54")
 
     def addField(self, name, value, code):
         self.fields[code] = PromptPayField(code, name, value)
@@ -23,14 +22,14 @@ class PromptPayQR:
         return self.toString()
 
     def toString(self):
-        outStr = ''
+        outStr = ""
 
-        for code, field in sorted(self.fields.items()):
+        for _, field in sorted(self.fields.items()):
             outStr += str(field)
 
-        crc = self.crc_obj.calculate(outStr+'6304')
+        crc = self.crc_obj.calculate(outStr + "6304")
         crchex = hex(crc)[2:].upper()
-        crcField = PromptPayField('63', 'crc16', crchex)
+        crcField = PromptPayField("63", "crc16", crchex)
         outStr += str(crcField)
 
         return outStr

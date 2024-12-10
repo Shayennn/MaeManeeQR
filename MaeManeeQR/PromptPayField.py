@@ -10,7 +10,7 @@ class PromptPayField:
 
     def __str__(self):
         outStr = str(int(self.code)).zfill(2)
-        outData = ''
+        outData = ""
         if type(self.value) == str:
             outData = self.value
         else:

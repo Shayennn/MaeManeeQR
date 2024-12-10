@@ -34,7 +34,7 @@ jobs:
     - name: Check code style with Black
       run: |
         # Check if the code is formatted according to Black's standards
-        black --check .
+        black --check --line-length=100 --target-version=py311 .
     - name: Test with pytest
       run: |
         pytest
