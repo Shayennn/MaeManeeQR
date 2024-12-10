@@ -1,4 +1,4 @@
-from MaeManeeQR import KShopQR
+from ThaiPaymentQR import KShopQR
 
 mmn = KShopQR.KShopQR("EXT01000174879", "Supatipanno")
 mmn.setAmount(168.88)
