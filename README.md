@@ -2,6 +2,15 @@
 
 A Python tool for generating SCB MaeManee QR Codes.
 
+- [MaeManeeQR](#maemaneeqr)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Example](#example)
+  - [Testing](#testing)
+  - [Code Formatting and Pre-Commit Hooks](#code-formatting-and-pre-commit-hooks)
+  - [License](#license)
+
 ## Requirements
 
 - Python 3.9 or higher (tested on Python 3.9, 3.10, and 3.11)
@@ -43,6 +52,16 @@ mmn.setAmount(168.88)
 # Print the QR code content (can be used with QR code generators)
 print(mmn)
 ```
+
+## Example
+
+See the [example.py](example.py) file for a more detailed example.
+
+```bash
+python example.py|qrencode -o - -t ANSIUTF8
+```
+
+![Example QR Code](example.png)
 
 ## Testing
 
