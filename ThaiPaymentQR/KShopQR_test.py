@@ -44,7 +44,7 @@ def test_crc16():
 def test_KShopQR():
     from ThaiPaymentQR import KShopQR
 
-    ksp = KShopQR.KShopQR("014000000820910", "TESTPYTHON")
+    ksp = KShopQR("014000000820910", "TESTPYTHON")
     ksp.setAmount(14.53)
     ksp_str = str(ksp)
 
@@ -84,7 +84,7 @@ def test_KShopQR():
 def test_KShopQR_2():
     from ThaiPaymentQR import KShopQR
 
-    ksp = KShopQR.KShopQR("014000000820910", "312121")
+    ksp = KShopQR("014000000820910", "312121")
     ksp.setAmount(1212.00)
     ksp_str = str(ksp)
 

@@ -49,7 +49,7 @@ def test_crc16():
 def test_maemaneeqr():
     from ThaiPaymentQR import MaeManeeQR
 
-    mmn = MaeManeeQR.MaeManeeQR("014000000820910", "TESTPYTHON")
+    mmn = MaeManeeQR("014000000820910", "TESTPYTHON")
     mmn.setAmount(14.53)
     mmn_str = str(mmn)
 
@@ -75,7 +75,7 @@ def test_maemaneeqr():
 def test_maemaneeqr_2():
     from ThaiPaymentQR import MaeManeeQR
 
-    mmn = MaeManeeQR.MaeManeeQR("014000000820910", "312121")
+    mmn = MaeManeeQR("014000000820910", "312121")
     mmn.setAmount(1212.00)
     mmn_str = str(mmn)
 
