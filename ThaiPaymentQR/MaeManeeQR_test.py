@@ -83,6 +83,17 @@ def test_maemaneeqr_2():
 
     constant_and_checksum_test(mmn_str)
 
+    # Expected field 30
+    assert "30" in mmn.fields, "BillPayment field should be in MaeManeeQR fields."
+
+    # Expected field 30 data
+    assert (
+        str(mmn.fields["30"]) in mmn_str
+    ), "BillPayment field data should be in MaeManeeQR string."
+
+    # NOT Expected field 31
+    assert "31" not in mmn.fields, "PaymentInnovation field should not be in MaeManeeQR fields."
+
     # Expected 0215014000000820910 in mmn_str
     assert "0215014000000820910" in mmn_str, "ShopID representation is incorrect."
 

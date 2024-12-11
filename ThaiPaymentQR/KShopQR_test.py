@@ -52,6 +52,20 @@ def test_KShopQR():
 
     constant_and_checksum_test(ksp_str)
 
+    # Expected field 30
+    assert "30" in ksp.fields, "BillPayment field should be in KShopQR fields."
+
+    # Expected field 30 data
+    assert str(ksp.fields["30"]) in ksp_str, "BillPayment field data should be in KShopQR string."
+
+    # Expected field 31
+    assert "31" in ksp.fields, "PaymentInnovation field should be in KShopQR fields."
+
+    # Expected field 31 data
+    assert (
+        str(ksp.fields["31"]) in ksp_str
+    ), "PaymentInnovation field data should be in KShopQR string."
+
     # Expected 0215014000000820910 in ksp_str
     assert "0215014000000820910" in ksp_str, "ShopID representation is incorrect."
 
@@ -63,7 +77,7 @@ def test_KShopQR():
 
     # Expected data (without 8 last characters) in ksp_str
     assert len(ksp_str[:-8]) == len(
-        "00020101021230720016A000000677010112011501075360003150802150140000008209100310TESTPYTHON5303764540514.535802TH622007160000000000085234"
+        "00020101021230750016A000000677010112011501075360003150802150140000008209100313KPSTESTPYTHON31750016A000000677010113011501075360003150802150140000008209100413KPSTESTPYTHON5303764540514.535802TH"
     ), "Data length is incorrect."
 
 
@@ -89,7 +103,7 @@ def test_KShopQR_2():
 
     # Expected data (without 8 last characters) in ksp_str
     assert len(ksp_str[:-8]) == len(
-        "00020101021230680016A000000677010112011501075360003150802150140000008209100306312121530376454071212.005802TH622007160000000000085234"
+        "00020101021230710016A000000677010112011501075360003150802150140000008209100309KPS31212131710016A000000677010113011501075360003150802150140000008209100409KPS312121530376454071212.005802TH"
     ), "Data length is incorrect."
 
 
