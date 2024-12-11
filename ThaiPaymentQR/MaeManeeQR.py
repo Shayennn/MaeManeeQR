@@ -4,6 +4,7 @@ from .PromptPayQR import PromptPayQR
 
 class MaeManeeQR(PromptPayQR):
     def __init__(self, shopID, Ref):
+        self.fields = {}
         super().__init__()
         bill_info_data = [
             PromptPayField("00", "AppID", "A000000677010112"),
