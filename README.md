@@ -1,8 +1,8 @@
-# MaeManeeQR
+# PyThaiPaymentQR
 
 A Python tool for generating SCB MaeManee QR Codes.
 
-- [MaeManeeQR](#maemaneeqr)
+- [PyThaiPaymentQR](#pythaipaymentqr)
   - [Requirements](#requirements)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -20,8 +20,8 @@ A Python tool for generating SCB MaeManee QR Codes.
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/Shayennn/MaeManeeQR.git
-   cd MaeManeeQR
+   git clone https://github.com/Shayennn/PyThaiPaymentQR.git
+   cd PyThaiPaymentQR
    ```
 
 2. Install the required dependencies:
@@ -35,7 +35,8 @@ A Python tool for generating SCB MaeManee QR Codes.
 Below is a simple example that generates a MaeManee QR code string.
 
 ```python
-from MaeManeeQR import MaeManeeQR
+from PyThaiPaymentQR import MaeManeeQR
+#from PyThaiPaymentQR import KShopQR
 
 # Your Shop ID from the MaeManee App
 shopID = '014000000820910'
@@ -43,14 +44,14 @@ shopID = '014000000820910'
 # A reference message to include in the transaction details
 ref = 'ShayennnTestQR'
 
-# Create the MaeManeeQR object
-mmn = MaeManeeQR.MaeManeeQR(shopID, ref)
+# Create the PaymentQR object
+qr_obj = MaeManeeQR(shopID, ref)
 
 # Set the amount for the QR Code payment
-mmn.setAmount(168.88)
+qr_obj.setAmount(168.88)
 
 # Print the QR code content (can be used with QR code generators)
-print(mmn)
+print(qr_obj)
 ```
 
 ## Example

@@ -1,4 +1,3 @@
-from MaeManeeQR import MaeManeeQR
 import pytest
 from PyCRC.CRCCCITT import CRCCCITT
 
@@ -48,7 +47,9 @@ def test_crc16():
 
 
 def test_maemaneeqr():
-    mmn = MaeManeeQR.MaeManeeQR("014000000820910", "TESTPYTHON")
+    from ThaiPaymentQR import MaeManeeQR
+
+    mmn = MaeManeeQR("014000000820910", "TESTPYTHON")
     mmn.setAmount(14.53)
     mmn_str = str(mmn)
 
@@ -72,13 +73,26 @@ def test_maemaneeqr():
 
 
 def test_maemaneeqr_2():
-    mmn = MaeManeeQR.MaeManeeQR("014000000820910", "312121")
+    from ThaiPaymentQR import MaeManeeQR
+
+    mmn = MaeManeeQR("014000000820910", "312121")
     mmn.setAmount(1212.00)
     mmn_str = str(mmn)
 
     assert mmn_str, "MaeManeeQR string representation should not be empty."
 
     constant_and_checksum_test(mmn_str)
+
+    # Expected field 30
+    assert "30" in mmn.fields, "BillPayment field should be in MaeManeeQR fields."
+
+    # Expected field 30 data
+    assert (
+        str(mmn.fields["30"]) in mmn_str
+    ), "BillPayment field data should be in MaeManeeQR string."
+
+    # NOT Expected field 31
+    assert "31" not in mmn.fields, "PaymentInnovation field should not be in MaeManeeQR fields."
 
     # Expected 0215014000000820910 in mmn_str
     assert "0215014000000820910" in mmn_str, "ShopID representation is incorrect."
