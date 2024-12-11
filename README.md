@@ -36,7 +36,7 @@ Below is a simple example that generates a MaeManee QR code string.
 
 ```python
 from PyThaiPaymentQR import MaeManeeQR
-#from PyThaiPaymentQR import KShopQR
+# from PyThaiPaymentQR import KShopQR
 
 # Your Shop ID from the MaeManee App
 shopID = '014000000820910'
