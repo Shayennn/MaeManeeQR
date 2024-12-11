@@ -20,7 +20,7 @@ A Python tool for generating SCB MaeManee QR Codes.
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/Shayennn/PyThaiPaymentQR.git
+   git clone https://github.com/TamRaiDee/PyThaiPaymentQR.git
    cd PyThaiPaymentQR
    ```
 
@@ -42,7 +42,7 @@ from PyThaiPaymentQR import MaeManeeQR
 shopID = '014000000820910'
 
 # A reference message to include in the transaction details
-ref = 'ShayennnTestQR'
+ref = 'TamRaiDeeTestQR'
 
 # Create the PaymentQR object
 qr_obj = MaeManeeQR(shopID, ref)
